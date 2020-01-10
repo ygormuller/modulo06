@@ -5,7 +5,8 @@ import Main from './pages/Main';
 import User from './pages/User'
 
 const Routes = createAppContainer(
-  createStackNavigator({
+  createStackNavigator(
+    {
     Main,
     User,
   },

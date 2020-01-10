@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import api from '../../services/api';
-import { 
+import {
   Container,
-  Header, 
-  Avatar, 
-  Name, 
+  Header,
+  Avatar,
+  Name,
   Bio,
   Stars,
   Starred,
@@ -23,7 +23,7 @@ export default class User extends Component {
 
   static propTypes = {
     navigation: PropTypes.shape({
-      getParam: PropTypes.func,
+      navigate: PropTypes.func,
     }).isRequired,
   };
 
@@ -39,13 +39,13 @@ export default class User extends Component {
 
     this.setState({ stars: response.data });
   }
-  
+
   render() {
     const { navigation } = this.props;
     const { stars } = this.state;
 
     const user = navigation.getParam('use')
-    
+
     return(
       <Container>
         <Header>
@@ -68,6 +68,6 @@ export default class User extends Component {
           )}
         />
       </Container>
-    )  
+    )
    }
 }

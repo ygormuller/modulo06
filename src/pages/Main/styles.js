@@ -66,11 +66,11 @@ export const Bio = styled.Text.attrs({
   font-size: 13px;
   line-height: 18px;
   color: #999;
-  margin-top; 5px;
+  margin-top: 5px;
   text-align: center;
   `;
 
-export const ProfileButton = styled(ReactButton)`
+export const ProfileButton = styled(RectButton)`
   margin-top: 10px;
   align-self: strech;
   border-radius: 4px;

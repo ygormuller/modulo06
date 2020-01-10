@@ -1,33 +1,34 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Keyboard, ActivityIndicator } from 'react-native';
-import AsyncStorage from `react-native-community/async-storage`;
+import AsyncStorage from '@react-native-community/async-storage';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import api from '../../services/api';
 
-import { Container, 
-  Form, 
-  Input, 
-  SubmitButton, 
-  List, 
-  User, 
-  Avatar, 
-  Name, 
-  Bio, 
-  ProfileButton, 
-  ProfileButtonText, 
+import { Container,
+  Form,
+  Input,
+  SubmitButton,
+  List,
+  User,
+  Avatar,
+  Name,
+  Bio,
+  ProfileButton,
+  ProfileButtonText,
 } from './styles';
 
 export default class Main extends Component {
-  static navigationOption = {
-    title: 'Usuários',
-  };
+  //*static navigationOption = {
+   // title: 'Usuários',
+  //};
 
-  static propTypes = {
-    navigation: PropTypes.shape({
-      navigate: PropTypes.func,
-    }).isRequired,
-  };
+  //static propTypes = {
+  //  navigation: PropTypes.shape({
+  //    navigate: PropTypes.func,
+  //  }).isRequired,
+  //};
+  //
 
   state = {
     newUser: '',
@@ -46,7 +47,7 @@ export default class Main extends Component {
   async componentDidUpdate(_,prevState) {
     const { users } = this.state;
 
-    if(prevState.users /= users){
+    if(prevState.users !== users){
       AsyncStorage.setIem('user', JSON.stringify(users));
     }
   }
@@ -68,6 +69,7 @@ export default class Main extends Component {
     this.setState({
       users: [ ...users, data],
       newUser: '',
+      loading: false,
     });
 
   Keyboard.dismiss();
@@ -80,7 +82,7 @@ export default class Main extends Component {
   };
 
   render () {
-    const { users, newUser } = this.state;
+    const { users, newUser, loading } = this.state;
 
     return(
      <Container>
@@ -103,9 +105,9 @@ export default class Main extends Component {
         </SubmitButton>
       </Form>
 
-      <List 
+      <List
        data={users}
-       keyExtractor={user => user.login} 
+       keyExtractor={user => user.login}
        renderItem={({ item }) => (
          <User>
            <Avatar source={{ uri: item.avatar }} />
@@ -122,4 +124,8 @@ export default class Main extends Component {
   );
   }
 }
+
+Main.navigationOptions = {
+  title: 'Usuários',
+};
 
