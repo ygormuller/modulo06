@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View } from 'react-native';
+//import { View } from 'react-native';
 import api from '../../services/api';
 import {
   Container,
@@ -14,7 +14,7 @@ import {
   Info,
   Title,
   Author,
-  } from '../Main/styles';
+  } from './styles';
 
 export default class User extends Component {
   static navigationOptions = ({ navigation }) => ({
@@ -23,7 +23,7 @@ export default class User extends Component {
 
   static propTypes = {
     navigation: PropTypes.shape({
-      navigate: PropTypes.func,
+      getParam: PropTypes.func,
     }).isRequired,
   };
 
@@ -44,7 +44,7 @@ export default class User extends Component {
     const { navigation } = this.props;
     const { stars } = this.state;
 
-    const user = navigation.getParam('use')
+    const user = navigation.getParam('user')
 
     return(
       <Container>
@@ -59,10 +59,10 @@ export default class User extends Component {
           keyExtractor={ star => String(star.id)}
           renderItem={({ Item }) => (
             <Starred>
-              <OwnerAvatar source={{ uri: Item.owner.avatar_url }} />
+              <OwnerAvatar source={{ uri: item.owner.avatar_url }} />
               <Info>
-                <Title>{Item.name}</Title>
-                <Author>{Item.owner.login}</Author>
+                <Title>{item.name}</Title>
+                <Author>{item.owner.login}</Author>
               </Info>
             </Starred>
           )}

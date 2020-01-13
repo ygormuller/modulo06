@@ -41,7 +41,7 @@ margin-top: 20px;
 `;
 
 export const User = styled.View`
-  margin-items: ClientRect;
+  align-items: center;
   margin: 0 20px 30px;
   `;
 

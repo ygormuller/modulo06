@@ -1,16 +1,14 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
-    align-items: center;
-    padding-bottom: 20px;
-    border-botton-width: 1px;
-    border-color: #eee;
+    flex: 1;
+    padding: 30px;
 `;
 
 export const Header = styled.View`
     align-items: center;
-    padding-botton: 20px;
-    border-width-botton: 1px;
+    padding-bottom: 20px;
+    border-bottom-width: 1px;
     border-color: #eee;
 `;
 
@@ -30,7 +28,7 @@ export const Name = styled.Text`
 `;
 
 export const Bio = styled.Text`
-    font-size = 14px;
+    font-size : 14px;
     line-height: 18px;
     color: #999;
     margin-top: 5px;
@@ -47,14 +45,14 @@ export const Bio = styled.Text`
     background: #f5f5f5;
     border-radius: 4px;
     padding: 10px 15px;
-    margin-botton: 20px;
+    margin-bottom: 20px;
     flex-direction: row;
     align-items: center;
   `;
 
   export const OwnerAvatar = styled.Image`
     height: 42px;
-    widht: 42px;
+    width: 42px;
     border-radius: 21px;
     background: #eee;
   `;
@@ -68,7 +66,7 @@ export const Bio = styled.Text`
   })`
     font-size: 15px;
     font-weight: bold;
-    color: #333;   
+    color: #333;
     `;
 
   export const Author = styled.Text`

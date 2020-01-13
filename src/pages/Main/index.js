@@ -19,16 +19,16 @@ import { Container,
 } from './styles';
 
 export default class Main extends Component {
-  //*static navigationOption = {
-   // title: 'Usuários',
-  //};
+  static navigationOptions = {
+    title: 'Usuários',
+  };
 
-  //static propTypes = {
-  //  navigation: PropTypes.shape({
-  //    navigate: PropTypes.func,
-  //  }).isRequired,
-  //};
-  //
+  static propTypes = {
+    navigation: PropTypes.shape({
+      navigate: PropTypes.func,
+    }).isRequired,
+  };
+
 
   state = {
     newUser: '',
@@ -75,7 +75,7 @@ export default class Main extends Component {
   Keyboard.dismiss();
 };
 
-  handleNavigate = (user) => {
+  handleNavigate = user => {
     const { navigation } = this.props;
 
     navigation.navigate('User', { user });
@@ -114,18 +114,14 @@ export default class Main extends Component {
            <Name>{item.name}</Name>
            <Bio>{item.bio}</Bio>
 
-           <ProfileButton onPress={() => this.handleNavigate()}>
+           <ProfileButton onPress={() => this.handleNavigate(item)}>
              <ProfileButtonText>Ver perfil</ProfileButtonText>
            </ProfileButton>
          </User>
        )}
       />
     </Container>
-  );
+    );
   }
 }
-
-Main.navigationOptions = {
-  title: 'Usuários',
-};
 
