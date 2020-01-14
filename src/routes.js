@@ -11,13 +11,14 @@ const Routes = createAppContainer(
     User,
   },
   {
-    headerTitleAlign: 'center',
+    //headerTitleAlign: 'center',
     headerBackTitlevisible: false,
     defaultNavigationOptions: {
       headerStyle: {
         backgroundColor: '#7159c1',
       },
       headerTintColor: '#FFF',
+      headerTitleAlign: 'center',
     }
   })
 );

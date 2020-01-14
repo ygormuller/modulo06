@@ -72,7 +72,7 @@ export const Bio = styled.Text.attrs({
 
 export const ProfileButton = styled(RectButton)`
   margin-top: 10px;
-  align-self: strech;
+  align-self: auto;
   border-radius: 4px;
   background: #7159c1;
   justify-content: center;

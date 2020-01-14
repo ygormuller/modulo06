@@ -48,7 +48,7 @@ export default class Main extends Component {
     const { users } = this.state;
 
     if(prevState.users !== users){
-      AsyncStorage.setIem('user', JSON.stringify(users));
+      AsyncStorage.setItem('user', JSON.stringify(users));
     }
   }
 
